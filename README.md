@@ -13,8 +13,9 @@ This tool is helpful in 2 theoretical scenarios:
 2. The player has many Alva missions stocked in the Atlas
 
 ## Installation
-The only contents you need to run the application are
-* [here](https://github.com/arnoldwang97/IncursionUniqueProfit/tree/master/IncursionProfitMacro/Application)
+The only contents you need to run the application are here:
+* [Application](https://github.com/arnoldwang97/IncursionUniqueProfit/tree/master/IncursionProfitMacro/Application)
+
 This application is built in C#, so as of now the `.exe` only runs if you have the local `.dll` files (potential bugfix for the future)
 
 ## Usage

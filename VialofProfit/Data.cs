@@ -14,7 +14,7 @@ using System.Net.Http;
 using System.Collections;
 using System.Web.UI.WebControls;
 
-namespace IncursionProfitMacro
+namespace VialofProfit
 {
     class Data
     {

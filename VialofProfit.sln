@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2047
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IncursionProfitMacro", "IncursionProfitMacro\IncursionProfitMacro.csproj", "{8373E063-96B8-4675-85EA-CDBAE370E375}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VialofProfit", "VialofProfit\VialofProfit.csproj", "{8373E063-96B8-4675-85EA-CDBAE370E375}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +20,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {ED3FA13A-B1D2-4A5E-8656-CF6E45D40BE7}
+		SolutionGuid = {8D57F6F1-064C-4E1E-8868-8E2FAC41DD8E}
 	EndGlobalSection
 EndGlobal

@@ -1,6 +1,6 @@
-# IncursionUniqueProfit
+# Vial of Profit
 
-IncursionUniqueProfit is a tool that lists the profits that a player can make if he purchases the base item and vial that can be sacrificed in the tier 3 Temple of Atzoatal Room - Apex of Ascension. Profit is calculated with
+Vial of Profit is a tool that lists the profits that a player can make if he purchases the base item and vial that can be sacrificed in the tier 3 Temple of Atzoatal Room - Apex of Ascension. Profit is calculated with
 ```
 Profit = Price of Upgraded Unique - Cost of Vial - Cost of Base Item
 ```

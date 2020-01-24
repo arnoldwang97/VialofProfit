@@ -16,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Globalization;
 
 namespace VialofProfit
 {
@@ -28,10 +29,14 @@ namespace VialofProfit
 
         public MainWindow()
         {
+            LoadMessageBox LMB = new LoadMessageBox();
+            LMB.Show();
             InitializeComponent();
             marketData = new Data();
             marketData.Initialize();
             FillDataGrid();
+            textBox1.Text = "Latest Pull: " + DateTime.Now.ToString(new CultureInfo("en-us"));
+            LMB.Close();
 
         }
 
@@ -89,6 +94,24 @@ namespace VialofProfit
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             System.Windows.Application.Current.Shutdown();
+        }
+
+        private void WindowMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+                this.DragMove();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            LoadMessageBox a = new LoadMessageBox();
+            a.Show();
+            marketData = new Data();
+            marketData.Initialize();
+            FillDataGrid();
+            textBox1.Text = "Latest Pull: " + DateTime.Now.ToString(new CultureInfo("en-us"));
+            a.Close();
+            
         }
     }
 

@@ -5,9 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VialofProfit"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="945.6" Background="#FF30373F" WindowStyle="None" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="MainWindow" Height="600" Width="945.6" Background="#FF30373F" WindowStyle="None" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" MouseDown="WindowMouseDown">
     <Window.Resources>
         <Color x:Key="Gray1">#FF30373F</Color>
+        <Image x:Key="StockRefresh">
+            <Image.Source>
+                <BitmapImage UriSource="/images/stockRefresh.png"></BitmapImage>
+            </Image.Source>
+        </Image>
         <Style x:Key="Style1" TargetType="{x:Type DataGrid}">
             <Setter Property="ColumnHeaderStyle" Value="{DynamicResource ColumnHeaderStyle1}"/>
         </Style>
@@ -25,7 +30,26 @@
                 <Trigger Property="IsFocused" Value="True">
                     <Setter Property="Background" Value="#FF988DA9"></Setter>
                 </Trigger>
-                
+
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="ButtonStyle1" TargetType="Button">
+            <Setter Property="FontFamily" Value="Arial"></Setter>
+            <Setter Property="FontSize" Value="24"></Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center"
+                        VerticalAlignment="Center"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#FF30373F"></Setter>
+                </Trigger>
             </Style.Triggers>
         </Style>
     </Window.Resources>
@@ -58,10 +82,10 @@
                             <Setter Property="VerticalAlignment" Value="Center"/>
                             <Setter Property="FontFamily" Value="Arial"/>
                             <Setter Property="FontWeight" Value="Bold"/>
-                            
-                            
+
+
                         </Style>
-                        
+
                     </DataGridTextColumn.ElementStyle>
                     <DataGridTextColumn.CellStyle>
                         <Style TargetType="DataGridCell">
@@ -72,7 +96,7 @@
                                     <Setter Property="Foreground" Value="White"/>
                                 </Trigger>
                                 <Trigger Property="IsSelected" Value="False">
-                                    <Setter Property="Foreground" Value="#FF6D7A85"/>
+                                    <Setter Property="Foreground" Value="#FF9B9D9F"/>
                                 </Trigger>
                             </Style.Triggers>
                         </Style>
@@ -96,7 +120,7 @@
                                     <Setter Property="Foreground" Value="White"/>
                                 </Trigger>
                                 <Trigger Property="IsSelected" Value="False">
-                                    <Setter Property="Foreground" Value="#FF6D7A85"/>
+                                    <Setter Property="Foreground" Value="#FF9B9D9F"/>
                                 </Trigger>
                             </Style.Triggers>
                         </Style>
@@ -133,7 +157,7 @@
                                     <Setter Property="Foreground" Value="White"/>
                                 </Trigger>
                                 <Trigger Property="IsSelected" Value="False">
-                                    <Setter Property="Foreground" Value="#FF6D7A85"/>
+                                    <Setter Property="Foreground" Value="#FF9B9D9F"/>
                                 </Trigger>
                             </Style.Triggers>
                         </Style>
@@ -157,7 +181,7 @@
                                     <Setter Property="Foreground" Value="White"/>
                                 </Trigger>
                                 <Trigger Property="IsSelected" Value="False">
-                                    <Setter Property="Foreground" Value="#FF6D7A85"/>
+                                    <Setter Property="Foreground" Value="#FF9B9D9F"/>
                                 </Trigger>
                             </Style.Triggers>
                         </Style>
@@ -194,7 +218,7 @@
                                     <Setter Property="Foreground" Value="White"/>
                                 </Trigger>
                                 <Trigger Property="IsSelected" Value="False">
-                                    <Setter Property="Foreground" Value="#FF6D7A85"/>
+                                    <Setter Property="Foreground" Value="#FF9B9D9F"/>
                                 </Trigger>
                             </Style.Triggers>
                         </Style>
@@ -218,7 +242,7 @@
                                     <Setter Property="Foreground" Value="White"/>
                                 </Trigger>
                                 <Trigger Property="IsSelected" Value="False">
-                                    <Setter Property="Foreground" Value="#FF6D7A85"/>
+                                    <Setter Property="Foreground" Value="#FF9B9D9F"/>
                                 </Trigger>
                             </Style.Triggers>
                         </Style>
@@ -242,7 +266,7 @@
                                     <Setter Property="Foreground" Value="White"/>
                                 </Trigger>
                                 <Trigger Property="IsSelected" Value="False">
-                                    <Setter Property="Foreground" Value="#FF6D7A85"/>
+                                    <Setter Property="Foreground" Value="#FF9B9D9F"/>
                                 </Trigger>
                             </Style.Triggers>
                         </Style>
@@ -250,14 +274,16 @@
                 </DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="X" HorizontalAlignment="Left" Height="51" Margin="881,10,0,0" VerticalAlignment="Top" Width="55" Click="Button_Click_2" Background="#FF30373F">
-            <Button.Style>
-                <Style TargetType="ContentControl">
-                    <Setter Property="FontFamily" Value="Arial"></Setter>
-                    <Setter Property="FontSize" Value="36"></Setter>
-                </Style>
-            </Button.Style>
+        <Button Content="X" HorizontalAlignment="Left" Height="30" Margin="897,10,0,0" VerticalAlignment="Top" Width="39" 
+                Click="Button_Click_2" Background="#FF30373F" BorderBrush="#FF30373F" Foreground="White" Style="{DynamicResource ButtonStyle1}">
         </Button>
+        <Button HorizontalAlignment="Left" Height="66" Margin="459,0,0,0" VerticalAlignment="Top" Width="106" RenderTransformOrigin="1.646,0.471" Click="Button_Click" Content="{DynamicResource StockRefresh}"
+                Background="#FF30373F" BorderBrush="#FF30373F" Style="{DynamicResource ButtonStyle1}">
+        </Button>
+
+        <TextBox Name="textBox1" HorizontalAlignment="Center" Height="28" Margin="580,22,166.6,550" TextWrapping="Wrap" VerticalAlignment="Center" Width="199" IsReadOnly="True"
+                 FontFamily="Arial" FontSize="11" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FF30373F" BorderBrush="#FF30373F" Foreground="#FF9B9D9F" SelectionBrush="#FF30373F"
+                 />
 
     </Grid>
 </Window>
